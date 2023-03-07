@@ -7,6 +7,8 @@ class CreateAirbnbs < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :size
       t.binary :image
+      t.binary :image2
+      t.binary :image3
       t.string :price
 
      

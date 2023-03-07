@@ -1,5 +1,4 @@
-class Admin < ActiveRecord::Base
-    has_many :airbnb
-    has_many :reviews    
-  
+class Airbnb < ActiveRecord::Base
+    belongs_to :admin
+    has_many :reviews
 end

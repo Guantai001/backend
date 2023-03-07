@@ -1,24 +1,50 @@
 class ReviewController < ApplicationController
 
-    get "/reviews" do
+    get "/review" do
         reviews = Review.all
-        reviews.to_json
+        reviews.to_json(include: [:admin, :airbnb])
     end
 
-    get "/reviews/:id" do
+    get "/review/:id" do
         reviews = Review.find_by(id: params[:id])
         reviews.to_json
     end
 
     post "/reviews/" do
         review = Review.create(
-            user_name: params[:user_name],
-            user_email: params[:user_email],
+            user: params[:user],
+            email: params[:email],
             comment: params[:comment],
             rating: params[:rating],
-            admin: params[:admin_id],
-            airbnb: params[:airbnb_id]
+            admin_id: params[:admin_id],
+            airbnb_id: params[:airbnb_id]
+           
         )
+        review.to_json
+    end
+
+
+    get "/admin" do
+        admins = Admin.all
+        admins.to_json(include: [:airbnb, :reviews])
+    end
+
+    get "/admin/:id" do
+        admins = Admin.find_by(id: params[:id])
+        admins.to_json
+    end
+
+    post "/admin/" do
+        admin = Admin.create(
+            admin: params[:admin],
+            admemail: params[:admemail]
+        )
+        admin.to_json
+    end
+
+    delete "/reviews/:id" do
+        review = Review.find_by(id: params[:id])
+        review.destroy
         review.to_json
     end
 

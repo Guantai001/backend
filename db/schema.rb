@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2023_03_04_205747) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin"
-    t.string "email"
+    t.string "admemail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2023_03_04_205747) do
     t.string "description"
     t.string "size"
     t.binary "image"
+    t.binary "image2"
+    t.binary "image3"
     t.string "price"
     t.integer "admin_id"
     t.datetime "created_at", precision: 6, null: false
@@ -33,8 +35,8 @@ ActiveRecord::Schema.define(version: 2023_03_04_205747) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "user_name"
-    t.string "user_email"
+    t.string "user"
+    t.string "email"
     t.string "comment"
     t.integer "rating"
     t.integer "admin_id"

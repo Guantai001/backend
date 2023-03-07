@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
 
     get "/" do
         airbnbs = Airbnb.all
-        airbnbs.to_json(include: [:admin])
+        airbnbs.to_json(include: [:admin, :reviews])
     end
 
     get "/airbnbs/:id" do
@@ -21,7 +21,9 @@ class ApplicationController < Sinatra::Base
             size: params[:size],
             price: params[:price],
             image: params[:image],
-            admin: params[:admin_id]
+            image2: params[:image2],
+            image3: params[:image3],
+            admin_id: params[:admin_id]
         )
         airbnb.to_json
        {
