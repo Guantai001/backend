@@ -2,7 +2,7 @@ class ReviewController < ApplicationController
 
     get "/review" do
         reviews = Review.all
-        reviews.to_json(include: [:admin, :airbnb])
+        reviews.to_json(include: [:airbnb])
     end
 
     get "/review/:id" do
@@ -26,7 +26,7 @@ class ReviewController < ApplicationController
 
     get "/admin" do
         admins = Admin.all
-        admins.to_json(include: [:airbnb, :reviews])
+        admins.to_json
     end
 
     get "/admin/:id" do
