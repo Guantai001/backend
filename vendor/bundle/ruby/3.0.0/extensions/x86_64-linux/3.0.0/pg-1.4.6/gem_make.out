@@ -1,5 +1,5 @@
 current directory: /home/guantai/Downloads/Phase3/backend/vendor/bundle/ruby/3.0.0/gems/pg-1.4.6/ext
-/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230309-9394-rgnybd.rb extconf.rb
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230309-10286-fyvjs4.rb extconf.rb
 Calling libpq with GVL unlocked
 checking for pg_config... no
 checking for libpq per pkg-config... no
